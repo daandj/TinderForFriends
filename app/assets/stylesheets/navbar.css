@@ -1,0 +1,33 @@
+nav {
+	display: flex;
+	flex-direction: column;
+	background-color: #f7f7f7;
+	height: 10%;
+	padding: 0 60px;
+	text-align: center;
+}
+
+.logo {
+	font-size: 2.2em;
+	margin: auto;
+	padding-top: 35px;
+}
+
+.links-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 2em 0;
+}
+
+.links-container a {
+	color: black;
+	width: 10em;
+	text-align: center;
+	font-size: 1.3em;
+	text-decoration: none;
+}
+
+.links-container a:hover {
+	text-decoration: underline;
+}

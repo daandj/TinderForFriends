@@ -14,16 +14,7 @@
  *= require_self
  */
 body {
-  margin: 0;
+	margin: 0;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
 
-nav {
-	background-color: #f7f7f7;
-	width: 100%;
-	height: 10%;
-	padding: 30px 60px;
-}
-
-.logo {
-	font-size: 2em;
-}
