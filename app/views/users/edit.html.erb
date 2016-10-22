@@ -1,0 +1,9 @@
+<h2>Edit Profile</h2>
+
+<%= form_for :user do |f| %>
+	Name: <%= f.text_field :name %>
+  Email: <%= f.text_field :email %>
+	Password: <%= f.password_field :password %>
+	Password confirmation: <%= f.password_field :password_confirmation %>
+	<%= f.submit "Update" %>
+<% end %>

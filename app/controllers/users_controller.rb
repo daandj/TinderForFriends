@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+	before_filter :authorize, only: [:show_profile, :edit, :update]
 
-	def new
+	def new 
 	end
 
 	def create
@@ -10,6 +11,22 @@ class UsersController < ApplicationController
 			redirect_to '/'
 		else
 			redirect_to '/signup'
+		end
+	end
+
+	def show_profile
+	end
+
+	def edit
+	end
+
+	def update
+		user = User.find_by_id(session[:user_id])
+		puts user_params.class
+		if user.update_attributes(user_params)
+			redirect_to '/profile'
+		else
+			redirect_to '/profile/edit'
 		end
 	end
 

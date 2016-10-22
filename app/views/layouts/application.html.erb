@@ -13,8 +13,8 @@
 			<a>New Friends</a>
 			<a>Chats</a>
 			<% if current_user %>
-				<a>Profile</a>
-				<%= link_to 'Sing out', '/signout' %>
+				<%= link_to 'Profile', '/profile' %>
+				<%= link_to 'Sign out', '/signout' %>
 			<% else %>
 				<%= link_to 'Login', '/login' %>
 				<%= link_to 'Sing up', '/signup' %>
