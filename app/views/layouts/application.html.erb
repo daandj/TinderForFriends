@@ -10,14 +10,14 @@
 	<nav>
 		<div class="logo">TFF</div>
 		<div class="links-container">
-			<a>New Friends</a>
-			<a>Chats</a>
+			<%= link_to 'New Friends', 'new-friends' %>
+			<%= link_to 'Chats', '/chats' %>
 			<% if current_user %>
 				<%= link_to 'Profile', '/profile' %>
-				<%= link_to 'Sign out', '/signout' %>
+				<%= link_to 'Sign out', '/logout' %>
 			<% else %>
 				<%= link_to 'Login', '/login' %>
-				<%= link_to 'Sing up', '/signup' %>
+				<%= link_to 'Sign up', '/signup' %>
 			<% end %>
 		</div>
 	</nav>

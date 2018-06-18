@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-	before_filter :authorize, only: [:show_profile, :edit, :update]
+	before_filter :authorize, only: [:show_profile, :edit, :update, :chats, 
+																	:new_chat]
 
-	def new 
+	def new
 	end
 
 	def create
@@ -22,11 +23,25 @@ class UsersController < ApplicationController
 
 	def update
 		user = User.find_by_id(session[:user_id])
-		puts user_params.class
 		if user.update_attributes(user_params)
 			redirect_to '/profile'
 		else
 			redirect_to '/profile/edit'
+		end
+	end
+
+	def chats
+		@chats = current_user.chats
+	end
+
+	def new_chat
+		if new_friend = current_user.find_friend
+			puts "Friend found. :)"
+			chat = Chat.create(first_user: current_user, second_user: new_friend)
+			redirect_to chat_path(chat.id)
+		else
+			puts "No friend found. :("
+			redirect_to chats_path
 		end
 	end
 

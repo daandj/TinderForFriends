@@ -1,0 +1,14 @@
+<div class="name-box" >
+	<h2><%= other_name(@chat) %></h2>
+</div>
+<% @chat.messages.each do |m| %>
+	<%= m.user.name %>:
+	<%= m.body %><br>
+<% end %>
+<div class="chat-box" >
+	<%= form_for([@chat, @chat.messages.build]) do |f| %>
+		<%= f.text_field :body %>
+		<%= f.submit "Send!" %>
+	<% end %>
+</div>
+

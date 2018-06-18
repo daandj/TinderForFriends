@@ -1,0 +1,10 @@
+<h2>Chats</h2>
+<% if !@chats.empty? %>
+	<% @chats.each do |chat| %>
+		<h3><%= link_to other_name(chat), chat %></h3>
+	<% end %>
+<% else %>
+	<p>You don't have any friends yet click,
+	<%= link_to "New Friends", "/new-friends" %>
+	to find new friends</p>
+<% end %>
